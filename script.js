@@ -67,6 +67,22 @@ function playRound(playerSelection, computerSelection) {
         }
 }
 
+function game() {
+    for (let i = 0; i <= 5; i++) {
+        if (i<5) {
+            const playerSelection = playerPlay();
+            const computerSelection = computerPlay();
+            playRound(playerSelection, computerSelection);
+            console.log ("My score:" + " " + playerScore)
+            console.log ("Computer score:" + " " + computerScore)
+        }
+        else if (i >=5) {
+            console.log ("Game Over")
+            declareWinner()
+        }
+    }
+}
+
 function declareWinner() {
     if (computerScore > playerScore) {
         console.log ("You lose the game!")
@@ -76,23 +92,6 @@ function declareWinner() {
     else if (computerScore < playerScore) {
             console.log ("You win the game!")
             console.log ("Your score:" + " " + playerScore + " " + "Computer score:" + " " + computerScore)
-    }
-}
-
-
-function game() {
-    for (let i = 0; i <= 5; i++) {
-        if (i<5) {
-            const computerSelection = computerPlay();
-            const playerSelection = playerPlay();
-            playRound(playerSelection, computerSelection);
-            console.log ("My score:" + " " + playerScore)
-            console.log ("Computer score:" + " " + computerScore)
-        }
-        else if (i >=5) {
-            console.log ("Game Over")
-            console.log(declareWinner())
-        }
     }
 }
 
